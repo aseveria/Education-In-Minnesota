@@ -1,0 +1,855 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en_US" class="ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en_US"> <!--<![endif]-->
+  <head>
+    <link rel="stylesheet" type="text/css" href="/fanstatic/vendor/:version:2020-05-05T10:47:08/select2/select2.css" />
+<link rel="stylesheet" type="text/css" href="/fanstatic/css/:version:2020-05-05T10:47:07/main.min.css" />
+<link rel="stylesheet" type="text/css" href="/fanstatic/vendor/:version:2020-05-05T10:47:08/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="/fanstatic/ckanext-geoview/:version:2018-08-27T11:01:30/css/geo-resource-styles.css" />
+<link rel="stylesheet" type="text/css" href="/fanstatic/ckanext-harvest/:version:2020-05-05T11:21:16/styles/harvest.css" />
+<link rel="stylesheet" type="text/css" href="/fanstatic/ckanext-spatial/:version:2018-08-27T10:54:54/js/vendor/leaflet/leaflet.css" />
+<link rel="stylesheet" type="text/css" href="/fanstatic/ckanext-spatial/:version:2018-08-27T10:54:54/css/dataset_map.css" />
+
+    <meta charset="utf-8" />
+      <meta name="generator" content="ckan 2.8.4" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakes and Rivers - Open Water Features - Resources - Minnesota Geospatial Commons</title>
+
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" />
+    
+    
+        <link rel="alternate" type="text/n3" href="https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c.n3"/>
+        <link rel="alternate" type="text/ttl" href="https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c.ttl"/>
+        <link rel="alternate" type="application/rdf+xml" href="https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c.xml"/>
+        <link rel="alternate" type="application/ld+json" href="https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c.jsonld"/>
+    
+
+    
+    
+      
+  <link rel="stylesheet" href="/css/geodatamn.css" />
+
+    
+
+    
+    
+
+
+    
+
+
+    
+      
+      
+    
+  
+  <meta property="og:title" content="Lakes and Rivers - Open Water Features - Minnesota Geospatial Commons">
+  <meta property="og:description" content="This layer depicts open water features for lakes and rivers. The geography was initially created from the open water features depicted in the 2005 Generalized Land Use dataset developed by the...">
+
+    
+  <script>var __uzdbm_1 = "38fd07a2-d1c9-47e5-9256-56444df4d64f";var __uzdbm_2 = "ZmUzNzUwZDQtYnBwei00ZTE0LTliNzAtN2RmMDVhOWIxMGE1JDE0MS4xNDAuMjM1LjM2";var __uzdbm_3 = "";var __uzdbm_4 = "false";</script> <script>(function(w, d, e, u, c, g, a, b){ w["SSJSConnectorObj"] = {ss_cid : c, domain_info: "auto"}; a = d.createElement(e); a.async = true; a.src = u; b = d.getElementsByTagName(e)[0]; b.parentNode.insertBefore(a, b); })(window,document,"script","https://cdn.perfdrive.com/aperture/aperture.js","bpq1","ssConf");</script></head>
+
+  
+  <body data-site-root="https://gisdata.mn.gov/" data-locale-root="https://gisdata.mn.gov/" >
+
+    
+    <div class="hide"><a href="#content">Skip to content</a></div>
+  
+
+  
+     
+<header class="account-masthead">
+  <div class="container">
+     
+    <nav class="account not-authed">
+      <ul class="list-unstyled">
+        
+        <li><a href="/user/login">Log in</a></li>
+        
+        <li><a class="sub" href="/user/register">Register</a></li>
+         
+      </ul>
+    </nav>
+     
+  </div>
+</header>
+
+<header class="navbar navbar-static-top masthead">
+    
+  <div class="container">
+    <div class="navbar-right">
+      <button data-target="#main-navigation-toggle" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+        <span class="fa fa-bars"></span>
+      </button>
+    </div>
+    <hgroup class="header-image navbar-left">
+       
+      <a class="logo" href="/"><img src="/MNGeospatialCommonsLogoRGB_ReversedSmall.png" alt="Minnesota Geospatial Commons" title="Minnesota Geospatial Commons" /></a>
+       
+    </hgroup>
+  
+	</div>
+</header>
+<header class="account-navlinks">
+<div class="container">
+
+    <div class="collapse navbar-collapse" id="main-navigation-toggle">
+      
+      <nav class="section navigation">
+        <ul class="nav nav-pills">
+           <li><a href="/group">Categories</a></li><li><a href="/organization">Organizations</a></li><li><a href="/dataset">Resources</a></li> 
+        <li><a href = "/content/?q=news">News</a></li>
+            <li><a href = "/content/?q=help">Help</a></li> 
+            <li><a href = "/content/?q=about">About</a></li> </ul></nav>
+       
+    </div>
+  </div>
+</header>
+
+  
+    <div role="main">
+      <div id="content" class="container">
+        
+          
+            <div class="flash-messages">
+              
+                
+              
+            </div>
+          
+
+          
+            <div class="toolbar">
+              
+                
+                  <ol class="breadcrumb">
+                    
+<li class="home"><a href="/"><i class="fa fa-home"></i><span> Home</span></a></li>
+                    
+  
+    
+    
+      
+      
+      <li><a href="/organization">Organizations</a></li>
+      <li><a href="/organization/us-mn-state-metc">Metropolitan Council</a></li>
+    
+    <li class="active"><a class=" active" href="/dataset/us-mn-state-metc-water-lakes-rivers">Lakes and Rivers - Open ...</a></li>
+  
+
+                  </ol>
+                
+              
+            </div>
+          
+
+          <div class="row wrapper">
+            
+            
+            
+
+            
+              <aside class="secondary col-sm-3">
+                
+                
+
+  
+
+  
+    
+
+  
+    <section class="module module-narrow">
+      <div class="module context-info">
+        <div class="module-content">
+          
+            
+              <h1 class="heading">Lakes and Rivers - Open Water Features</h1>
+            
+            
+              
+              <div class="nums">
+                <dl>
+                  <dt>Followers</dt>
+                  <dd data-module="followers-counter" data-module-id="8c7556af-3469-43c9-a930-291fe14a3c3c" data-module-num_followers="1"><span>1</span></dd>
+                </dl>
+              </div>
+            
+            
+              
+                <div class="follow_button">
+                  
+                </div>
+              
+            
+          
+        </div>
+      </div>
+    </section>
+  
+
+  
+
+  
+    
+      
+      
+
+
+
+
+  
+  <div class="module module-narrow module-shallow context-info">
+    
+      <h2 class="module-heading"><i class="fa fa-building-o"></i> Organization</h2>
+    
+    <section class="module-content">
+      
+      
+        <div class="image">
+          <a href="/organization/us-mn-state-metc">
+            <img src="https://gisdata.mn.gov/agencyLogos/MetCouncil.png" width="200" alt="us-mn-state-metc" />
+          </a>
+        </div>
+      
+      
+      <h1 class="heading">Metropolitan Council
+        
+      </h1>
+      
+      
+      
+        <p>
+          The Metropolitan Council is the regional policy-making body, planning agency, and provider of essential services for the Twin Cities metropolitan region.
+          <a href="/organization/about/us-mn-state-metc">read more</a>
+        </p>
+      
+      
+      
+      
+    </section>
+  </div>
+  
+    
+  
+
+  
+    
+
+  <section class="module module-narrow social">
+    
+      <h2 class="module-heading"><i class="fa fa-share-square-o"></i> Social</h2>
+    
+    
+      <ul class="nav nav-simple">
+        <li class="nav-item"><a href="https://twitter.com/share?url=https://gisdata.mn.gov/dataset/us-mn-state-metc-water-lakes-rivers" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a></li>
+        <li class="nav-item"><a href="https://www.facebook.com/sharer.php?u=https://gisdata.mn.gov/dataset/us-mn-state-metc-water-lakes-rivers" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+      </ul>
+    
+  </section>
+
+  
+
+  
+    
+
+
+  
+    
+      
+        <section class="module module-narrow module-shallow license">
+          
+            <h2 class="module-heading"><i class="icon-medium fa fa-lock"></i> License</h2>
+          
+          
+            <p class="module-content">
+              
+                
+  
+    <span property="dc:rights">License not specified</span>
+  
+
+                
+              
+	      <br>
+	      <a href="/content/?q=help/legal_disclaimer">Legal disclaimer</a>
+
+            </p>
+          
+        </section>
+      
+    
+  
+
+  
+
+
+              </aside>
+            
+
+            
+              <div class="primary col-sm-9 col-xs-12">
+                
+                
+                  <article class="module">
+                    
+                      <header class="module-content page-header">
+                        
+                        <ul class="nav nav-tabs">
+                          
+  <li class="active"><a href="/dataset/us-mn-state-metc-water-lakes-rivers"><i class="fa fa-sitemap"></i> Resource</a></li>
+  <li><a href="/dataset/groups/us-mn-state-metc-water-lakes-rivers"><i class="fa fa-users"></i> Categories</a></li>
+  <li><a href="/dataset/activity/us-mn-state-metc-water-lakes-rivers"><i class="fa fa-clock-o"></i> Activity Stream</a></li>
+
+                        </ul>
+                      </header>
+                    
+                    <div class="module-content">
+                      
+                      
+  
+    
+      
+    
+
+  
+    
+    <h1>
+      
+        Lakes and Rivers - Open Water Features
+        
+        
+      
+    </h1>
+    
+      
+        <div class="notes embedded-content">
+         This layer depicts open water features for lakes and rivers. The geography was initially created from the open water features depicted in the 2005 Generalized Land Use dataset developed by the Metropolitan Council. It is being updated over time with data from a variety of sources. It includes lakes larger than 3 acres and rivers wider than 200 feet. It may also include some smaller open water features as needed by the Metropolitan Council, including all lakes in the Council&#39;s lake monitoirng program. This layer does not depict the satutory Ordinary High Water Level of lakes. &lt;br/&gt;&lt;br/&gt;NOTES: &lt;br/&gt;- This dataset is derived from the Master Open Water Features dataset published by the Met Council.&lt;br/&gt;- The extent of water features varies seasonally and annually with rainfall. The extent of water shown in this dataset may not reflect the current status of a particular water feature.&lt;br/&gt;- When adding new polygons or modifying existing polygons, we will create boundaries based on recent imagery that we think depicts average water levels. We will NOT try to adjust the boundaries for seasonal variations in water levels.   &lt;br/&gt;- Wastewater stabilization ponds, which can be quite large, are not shown in this layer. 
+        </div>
+      
+    
+    
+    <span class="insert-comment-thread"></span>
+  
+
+  
+    
+<section id="dataset-resources" class="resources" style="padding-top: 25px">
+  
+    
+      <ul class="resource-list">
+        
+          
+            
+
+
+<li class="resource-item" data-id="7f273ad2-749a-40f7-9015-5c30067fd20c">
+  
+
+    Shapefile<span class="format-label" property="dc:format" data-format="shp">SHP</span>
+    
+
+
+  
+  
+    <p class="description">
+     </p>
+  
+  
+  
+  <div class="dropdown btn-group">
+        <a href="https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/water_lakes_rivers/shp_water_lakes_rivers.zip" preview="/dataset/us-mn-state-metc-water-lakes-rivers/resource/7f273ad2-749a-40f7-9015-5c30067fd20c" class="SHP btn btn-primary dropdown-toggle resource-url-analytics" >
+            Download</a>
+  </div>
+  
+  
+</li>
+          
+            
+
+
+<li class="resource-item" data-id="a4509d73-f8b8-4590-af64-f791a5b89cee">
+  
+
+    OGC GeoPackage<span class="format-label" property="dc:format" data-format="gpkg">gpkg</span>
+    
+
+
+  
+  
+    <p class="description">
+     </p>
+  
+  
+  
+  <div class="dropdown btn-group">
+        <a href="https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/water_lakes_rivers/gpkg_water_lakes_rivers.zip" preview="/dataset/us-mn-state-metc-water-lakes-rivers/resource/a4509d73-f8b8-4590-af64-f791a5b89cee" class="gpkg btn btn-primary dropdown-toggle resource-url-analytics" >
+            Download</a>
+  </div>
+  
+  
+</li>
+          
+            
+
+
+<li class="resource-item" data-id="10732542-1b0a-4dd0-a877-1460fd734efe">
+  
+
+    Esri ArcGIS Server Map Service<span class="format-label" property="dc:format" data-format="ags_mapserver">ags_mapserver</span>
+    
+
+
+  
+  
+    <p class="description">
+     </p>
+  
+  
+  
+  <div class="dropdown btn-group">
+        <a href="https://arcgis.metc.state.mn.us/server/rest/services/GISLibrary/LakesAndRivers/FeatureServer" preview="/dataset/us-mn-state-metc-water-lakes-rivers/resource/10732542-1b0a-4dd0-a877-1460fd734efe" class="ags_mapserver btn btn-primary dropdown-toggle resource-url-analytics" >
+            Download</a>
+  </div>
+  
+  
+</li>
+          
+            
+
+
+<li class="resource-item" data-id="4167c94e-0813-4787-a418-580815b341dc">
+  
+
+    ESRI File Geodatabase<span class="format-label" property="dc:format" data-format="fgdb">fgdb</span>
+    
+
+
+  
+  
+    <p class="description">
+     </p>
+  
+  
+  
+  <div class="dropdown btn-group">
+        <a href="https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/water_lakes_rivers/fgdb_water_lakes_rivers.zip" preview="/dataset/us-mn-state-metc-water-lakes-rivers/resource/4167c94e-0813-4787-a418-580815b341dc" class="fgdb btn btn-primary dropdown-toggle resource-url-analytics" >
+            Download</a>
+  </div>
+  
+  
+</li>
+          
+            
+
+
+<li class="resource-item" data-id="85779245-db2a-4d4b-ae09-a5c72a89e4e9">
+  
+
+    Full Metadata Record<span class="format-label" property="dc:format" data-format="html">HTML</span>
+    
+
+
+  
+  
+    <p class="description">
+     </p>
+  
+  
+  
+  <div class="dropdown btn-group">
+        <a href="https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/water_lakes_rivers/metadata/metadata.html" preview="/dataset/us-mn-state-metc-water-lakes-rivers/resource/85779245-db2a-4d4b-ae09-a5c72a89e4e9" class="HTML btn btn-primary dropdown-toggle resource-url-analytics" >
+            Download</a>
+  </div>
+  
+  
+</li>
+          
+        
+      </ul>
+    
+    
+</section>
+  
+
+  
+    
+  <section class="tags">
+    
+
+
+  <ul class="tag-list well">
+    
+      <li>
+        <a class="tag" href="/dataset?tags=lakes">lakes</a>
+      </li>
+    
+      <li>
+        <a class="tag" href="/dataset?tags=open+water+features">open water features</a>
+      </li>
+    
+      <li>
+        <a class="tag" href="/dataset?tags=rivers">rivers</a>
+      </li>
+    
+      <li>
+        <a class="tag" href="/dataset?tags=water">water</a>
+      </li>
+    
+      <li>
+        <a class="tag" href="/dataset?tags=water+features">water features</a>
+      </li>
+    
+  </ul>
+
+  </section>
+
+  
+
+  
+    <section class="additional-info">
+  <h3>Additional Info </h3>
+  <table class="table table-striped table-bordered table-condensed">
+    <thead>
+      <tr style="display:none">
+        <th scope="col">Field</th>
+        <th scope="col">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+
+
+   
+   
+   
+   
+
+
+
+
+    
+
+
+
+      
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsAccessConst</th>
+            <td class="dataset-details" property="rdf:value">None. This dataset is public domain under the Minnesota Government Data Practices Act (Minnesota Statutes Chapter 13). If the dataset is not available from the Online Linkage in Section 6, please contact the Distribution Contact Person.</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsCurrentRef</th>
+            <td class="dataset-details" property="rdf:value">The time period data indicates the last time when any significant update of the dataset has occured. The original data were derived from the Met Council's Generalized Land Use 2005 for the Twin Cities Metropolitan Area data which used ground condition (air photos) as of May 13th and 14th, 2005. The data have since been updated on a periodic basis. The dataset was substantially updated using air photos from mid-April 2010.</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsMetadataUrl</th>
+            <td class="dataset-details" property="rdf:value">https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/water_lakes_rivers/metadata/metadata.html</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsModifiedDate</th>
+            <td class="dataset-details" property="rdf:value">2020-11-20 00:36:03</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsOriginator</th>
+            <td class="dataset-details" property="rdf:value">Metropolitan Council</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsPeriodOfContent</th>
+            <td class="dataset-details" property="rdf:value">8/22/2019</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsPurpose</th>
+            <td class="dataset-details" property="rdf:value">A general depiction of lakes and rivers in the metro area that is periodically updated.</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">gdrsDsGuid</th>
+            <td class="dataset-details" property="rdf:value">{ce74229b-b065-4cce-82eb-4b43e77adc73}</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">spatial</th>
+            <td class="dataset-details" property="rdf:value">{"type":"Polygon","coordinates":[[[-94.026, 44.457],[-94.026, 45.418], [-92.715, 45.418], [-92.715, 44.457], [-94.026, 44.457]]]}</td>
+          </tr>
+        
+      
+
+      
+    </tbody>
+  </table>
+</section>
+  
+
+
+   
+    
+      
+
+<section class="module module-narrow dataset-map">
+<h2 class="module-heading"><i class="icon-medium fa fa-globe icon-globe"></i> Dataset extent</h2>
+  
+
+
+<div class="dataset-map" data-module="dataset-map" data-extent="{&#34;type&#34;:&#34;Polygon&#34;,&#34;coordinates&#34;:[[[-94.026, 44.457],[-94.026, 45.418], [-92.715, 45.418], [-92.715, 44.457], [-94.026, 44.457]]]}" data-module-site_url="&#34;https://gisdata.mn.gov/&#34;" data-module-map_config="{}">
+  <div id="dataset-map-container"></div>
+  <div id="dataset-map-attribution">
+    
+  <div>Map data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors</div>
+  
+    <div>Tiles by <a href="http://stamen.com">Stamen Design</a> (<a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>)</div>
+  
+
+
+  </div>
+</div>
+
+
+</section>
+    
+
+
+
+
+                    </div>
+                  </article>
+                
+              </div>
+            
+          </div>
+        
+      </div>
+    </div>
+  
+    <footer class="site-footer" style="background:#003865; color: white">
+  <div class="container" >
+    
+    <div class="row"  >
+      <div class="col-xs-6 col-md-4 footer-links">
+        <h3>Resources</h3>
+        <ul class="unstyled">
+
+          <li><a href="/content/?q=help/what_is_a_resource">What is a resource?</a>          </li>
+          <li><a href="/content/?q=help/accessing_using_resources">Accessing & Using Resources</a></li>
+          <li><a href="/content/?q=help/maintain_resources">Maintaining Resources</a></li>
+          <li><a href="http://docs.ckan.org/en/ckan-2.2.3/api.html">Data access API</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-6 col-md-4 footer-links">
+        <h3>Publishing</h3>
+        <ul class="unstyled">
+
+          <li><a href="/content/?q=about">About the Commons</a>          </li>
+          <li><a href="/content/?q=help/become_publisher">Becoming a Publisher</a>          </li>
+          <li><a href="/content/?q=help/publisher_expectations">Expectations for Publishers</a></li>
+          <li><a href="/content/?q=help/publishing_overview">How do I publish resources?</a></li>
+
+
+        </ul>
+      </div>
+      <div class="col-xs-6 col-md-4 footer-links">
+        <h3>Connect with us</h3>
+        <ul class="unstyled">
+          <li><a href="mailto:gisinfo.mngeo@state.mn.us">Email us</a></li>
+        </ul>
+
+        <ul class="unstyled">
+          <li>Subscribe for e-mail updates</li>
+        </ul>
+        <form  action="https://public.govdelivery.com/accounts/MNIT/subscribers/qualify" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="H2h7ipmCjijHH226zV1zvLT//LB+3yi/WrH7sm2orBVehtTeubuHT+gMcFo6TnqLanvGPgKbWBnDx/NhPKR8vg==" />
+<input type="hidden" name="topic_id" id="topic_id" value="MNIT_62" />
+<input style='width: 160px; border: 1px solid black; margin-top:23px; padding:5px 5px; color:black;' type="text"  name="email" id="email"  value="" autocomplete="off"
+                          placeholder="Enter your e-mail." />
+          <button type="submit" class="buttonGreen">Subscribe </button>
+        </form>
+
+
+
+
+      </div>
+
+
+    </div>
+    
+  </div>
+
+  
+    
+  
+</footer>
+  
+    
+    
+    
+  
+    
+
+  
+      <!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2RK7KCPKT"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-Y2RK7KCPKT');</script>
+  
+    
+
+      
+          <script type="application/ld+json">
+           {
+    "@context": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c/resource/7f273ad2-749a-40f7-9015-5c30067fd20c",
+            "@type": "schema:DataDownload",
+            "schema:encodingFormat": "SHP",
+            "schema:name": "Shapefile",
+            "schema:url": "https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/water_lakes_rivers/shp_water_lakes_rivers.zip"
+        },
+        {
+            "@id": "https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c/resource/10732542-1b0a-4dd0-a877-1460fd734efe",
+            "@type": "schema:DataDownload",
+            "schema:encodingFormat": "ags_mapserver",
+            "schema:name": "Esri ArcGIS Server Map Service",
+            "schema:url": "https://arcgis.metc.state.mn.us/server/rest/services/GISLibrary/LakesAndRivers/FeatureServer"
+        },
+        {
+            "@id": "https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c/resource/4167c94e-0813-4787-a418-580815b341dc",
+            "@type": "schema:DataDownload",
+            "schema:encodingFormat": "fgdb",
+            "schema:name": "ESRI File Geodatabase",
+            "schema:url": "https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/water_lakes_rivers/fgdb_water_lakes_rivers.zip"
+        },
+        {
+            "@id": "_:N709b8fd72fde4f849f0553b2356264de",
+            "@type": "schema:Place",
+            "schema:geo": {
+                "@id": "_:N2c87d141f49843418835a3ae32582e1f"
+            }
+        },
+        {
+            "@id": "_:N2c87d141f49843418835a3ae32582e1f",
+            "@type": "schema:GeoShape",
+            "schema:polygon": "{\"type\":\"Polygon\",\"coordinates\":[[[-94.026, 44.457],[-94.026, 45.418], [-92.715, 45.418], [-92.715, 44.457], [-94.026, 44.457]]]}"
+        },
+        {
+            "@id": "https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c",
+            "@type": "schema:Dataset",
+            "schema:about": {
+                "@id": "_:N5e0d4ca05c7e4da996705c1204fb83e4"
+            },
+            "schema:dateModified": "2020-11-20T09:05:37.072963",
+            "schema:datePublished": "2015-08-07T10:01:50.494740",
+            "schema:description": "This layer depicts open water features for lakes and rivers. The geography was initially created from the open water features depicted in the 2005 Generalized Land Use dataset developed by the Metropolitan Council. It is being updated over time with data from a variety of sources. It includes lakes larger than 3 acres and rivers wider than 200 feet. It may also include some smaller open water features as needed by the Metropolitan Council, including all lakes in the Council's lake monitoirng program. This layer does not depict the satutory Ordinary High Water Level of lakes. <br/><br/>NOTES: <br/>- This dataset is derived from the Master Open Water Features dataset published by the Met Council.<br/>- The extent of water features varies seasonally and annually with rainfall. The extent of water shown in this dataset may not reflect the current status of a particular water feature.<br/>- When adding new polygons or modifying existing polygons, we will create boundaries based on recent imagery that we think depicts average water levels. We will NOT try to adjust the boundaries for seasonal variations in water levels.   <br/>- Wastewater stabilization ponds, which can be quite large, are not shown in this layer. ",
+            "schema:distribution": [
+                {
+                    "@id": "https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c/resource/10732542-1b0a-4dd0-a877-1460fd734efe"
+                },
+                {
+                    "@id": "https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c/resource/a4509d73-f8b8-4590-af64-f791a5b89cee"
+                },
+                {
+                    "@id": "https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c/resource/85779245-db2a-4d4b-ae09-a5c72a89e4e9"
+                },
+                {
+                    "@id": "https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c/resource/4167c94e-0813-4787-a418-580815b341dc"
+                },
+                {
+                    "@id": "https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c/resource/7f273ad2-749a-40f7-9015-5c30067fd20c"
+                }
+            ],
+            "schema:includedInDataCatalog": {
+                "@id": "_:N9f9b9cb0bd9646f5bfec3ce894dd358b"
+            },
+            "schema:keywords": [
+                "open water features",
+                "water features",
+                "lakes",
+                "water",
+                "rivers"
+            ],
+            "schema:license": "License not specified",
+            "schema:name": "Lakes and Rivers - Open Water Features",
+            "schema:publisher": {
+                "@id": "https://gisdata.mn.gov/organization/4a81a75d-d50e-441c-94f5-c852f7e3d3d4"
+            },
+            "schema:spatialCoverage": {
+                "@id": "_:N709b8fd72fde4f849f0553b2356264de"
+            },
+            "schema:url": "https://gisdata.mn.gov/dataset/us-mn-state-metc-water-lakes-rivers"
+        },
+        {
+            "@id": "_:N9f9b9cb0bd9646f5bfec3ce894dd358b",
+            "@type": "schema:DataCatalog",
+            "schema:description": "",
+            "schema:name": "Minnesota Geospatial Commons",
+            "schema:url": "https://gisdata.mn.gov"
+        },
+        {
+            "@id": "_:N9357c26f213845dc9a1b52d97e98c79c",
+            "@type": "schema:ContactPoint",
+            "schema:contactType": "customer service",
+            "schema:url": "https://gisdata.mn.gov"
+        },
+        {
+            "@id": "https://gisdata.mn.gov/organization/4a81a75d-d50e-441c-94f5-c852f7e3d3d4",
+            "@type": "schema:Organization",
+            "schema:contactPoint": {
+                "@id": "_:N9357c26f213845dc9a1b52d97e98c79c"
+            },
+            "schema:name": "Metropolitan Council"
+        },
+        {
+            "@id": "https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c/resource/85779245-db2a-4d4b-ae09-a5c72a89e4e9",
+            "@type": "schema:DataDownload",
+            "schema:encodingFormat": "HTML",
+            "schema:name": "Full Metadata Record",
+            "schema:url": "https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/water_lakes_rivers/metadata/metadata.html"
+        },
+        {
+            "@id": "https://gisdata.mn.gov/dataset/8c7556af-3469-43c9-a930-291fe14a3c3c/resource/a4509d73-f8b8-4590-af64-f791a5b89cee",
+            "@type": "schema:DataDownload",
+            "schema:encodingFormat": "gpkg",
+            "schema:name": "OGC GeoPackage",
+            "schema:url": "https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_metc/water_lakes_rivers/gpkg_water_lakes_rivers.zip"
+        },
+        {
+            "@id": "_:N5e0d4ca05c7e4da996705c1204fb83e4",
+            "@type": "schema:Thing",
+            "schema:name": "inland-waters",
+            "schema:url": "https://gisdata.mn.gov/group/2204b2e5-7990-4671-94cb-c94c161875df"
+        }
+    ]
+}
+          </script>
+      
+  
+
+  <script>document.getElementsByTagName('html')[0].className += ' js';</script>
+<script type="text/javascript" src="/fanstatic/vendor/:version:2020-05-05T10:47:08/jquery.min.js"></script>
+<script type="text/javascript" src="/fanstatic/vendor/:version:2020-05-05T10:47:08/:bundle:bootstrap/js/bootstrap.min.js;jed.min.js;moment-with-locales.js;select2/select2.min.js"></script>
+<script type="text/javascript" src="/fanstatic/base/:version:2020-05-05T10:47:07/:bundle:plugins/jquery.inherit.min.js;plugins/jquery.proxy-all.min.js;plugins/jquery.url-helpers.min.js;plugins/jquery.date-helpers.min.js;plugins/jquery.slug.min.js;plugins/jquery.slug-preview.min.js;plugins/jquery.truncator.min.js;plugins/jquery.masonry.min.js;plugins/jquery.form-warning.min.js;plugins/jquery.images-loaded.min.js;sandbox.min.js;module.min.js;pubsub.min.js;client.min.js;notify.min.js;i18n.min.js;main.min.js;modules/select-switch.min.js;modules/slug-preview.min.js;modules/basic-form.min.js;modules/confirm-action.min.js;modules/api-info.min.js;modules/autocomplete.min.js;modules/custom-fields.min.js;modules/data-viewer.min.js;modules/table-selectable-rows.min.js;modules/resource-form.min.js;modules/resource-upload-field.min.js;modules/resource-reorder.min.js;modules/resource-view-reorder.min.js;modules/follow.min.js;modules/activity-stream.min.js;modules/dashboard.min.js;modules/resource-view-embed.min.js;view-filters.min.js;modules/resource-view-filters-form.min.js;modules/resource-view-filters.min.js;modules/table-toggle-more.min.js;modules/dataset-visibility.min.js;modules/media-grid.min.js;modules/image-upload.min.js;modules/followers-counter.min.js"></script>
+<script type="text/javascript" src="/fanstatic/ckanext-spatial/:version:2018-08-27T10:54:54/:bundle:js/vendor/leaflet/leaflet.js;js/common_map.js;js/dataset_map.js"></script>
+<script type="text/javascript" src="/fanstatic/js/:version:2023-04-27T07:03:49.53/:bundle:vendor/linkify/linkify.min.js;vendor/linkify/linkify-jquery.min.js;mngeo.js"></script></body>
+</html>

@@ -1,0 +1,870 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 9]> <html lang="en_US" class="ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en_US"> <!--<![endif]-->
+  <head>
+    <link rel="stylesheet" type="text/css" href="/fanstatic/vendor/:version:2020-05-05T10:47:08/select2/select2.css" />
+<link rel="stylesheet" type="text/css" href="/fanstatic/css/:version:2020-05-05T10:47:07/main.min.css" />
+<link rel="stylesheet" type="text/css" href="/fanstatic/vendor/:version:2020-05-05T10:47:08/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="/fanstatic/ckanext-geoview/:version:2018-08-27T11:01:30/css/geo-resource-styles.css" />
+<link rel="stylesheet" type="text/css" href="/fanstatic/ckanext-harvest/:version:2020-05-05T11:21:16/styles/harvest.css" />
+<link rel="stylesheet" type="text/css" href="/fanstatic/ckanext-spatial/:version:2018-08-27T10:54:54/js/vendor/leaflet/leaflet.css" />
+<link rel="stylesheet" type="text/css" href="/fanstatic/ckanext-spatial/:version:2018-08-27T10:54:54/css/dataset_map.css" />
+
+    <meta charset="utf-8" />
+      <meta name="generator" content="ckan 2.8.4" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City and Township Population Centers, Minnesota - Resources - Minnesota Geospatial Commons</title>
+
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" />
+    
+    
+        <link rel="alternate" type="text/n3" href="https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def.n3"/>
+        <link rel="alternate" type="text/ttl" href="https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def.ttl"/>
+        <link rel="alternate" type="application/rdf+xml" href="https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def.xml"/>
+        <link rel="alternate" type="application/ld+json" href="https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def.jsonld"/>
+    
+
+    
+    
+      
+  <link rel="stylesheet" href="/css/geodatamn.css" />
+
+    
+
+    
+    
+
+
+    
+
+
+    
+      
+      
+    
+  
+  <meta property="og:title" content="City and Township Population Centers, Minnesota - Minnesota Geospatial Commons">
+  <meta property="og:description" content="This layer contains cities, townships, reservations, and unorganized territories in the state of Minnesota, represented with point geometry for cartographic purposes. This dataset generally...">
+
+    
+  <script>var __uzdbm_1 = "92582197-6eb8-4cc8-8b06-608818728bee";var __uzdbm_2 = "M2Y2MTQ5YWEtYnBwei00ODQzLWE1MDMtNjdmZjg3ZTI2ODE3JDE0MS4xNDAuMjM1LjM2";var __uzdbm_3 = "";var __uzdbm_4 = "false";</script> <script>(function(w, d, e, u, c, g, a, b){ w["SSJSConnectorObj"] = {ss_cid : c, domain_info: "auto"}; a = d.createElement(e); a.async = true; a.src = u; b = d.getElementsByTagName(e)[0]; b.parentNode.insertBefore(a, b); })(window,document,"script","https://cdn.perfdrive.com/aperture/aperture.js","bpq1","ssConf");</script></head>
+
+  
+  <body data-site-root="https://gisdata.mn.gov/" data-locale-root="https://gisdata.mn.gov/" >
+
+    
+    <div class="hide"><a href="#content">Skip to content</a></div>
+  
+
+  
+     
+<header class="account-masthead">
+  <div class="container">
+     
+    <nav class="account not-authed">
+      <ul class="list-unstyled">
+        
+        <li><a href="/user/login">Log in</a></li>
+        
+        <li><a class="sub" href="/user/register">Register</a></li>
+         
+      </ul>
+    </nav>
+     
+  </div>
+</header>
+
+<header class="navbar navbar-static-top masthead">
+    
+  <div class="container">
+    <div class="navbar-right">
+      <button data-target="#main-navigation-toggle" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+        <span class="fa fa-bars"></span>
+      </button>
+    </div>
+    <hgroup class="header-image navbar-left">
+       
+      <a class="logo" href="/"><img src="/MNGeospatialCommonsLogoRGB_ReversedSmall.png" alt="Minnesota Geospatial Commons" title="Minnesota Geospatial Commons" /></a>
+       
+    </hgroup>
+  
+	</div>
+</header>
+<header class="account-navlinks">
+<div class="container">
+
+    <div class="collapse navbar-collapse" id="main-navigation-toggle">
+      
+      <nav class="section navigation">
+        <ul class="nav nav-pills">
+           <li><a href="/group">Categories</a></li><li><a href="/organization">Organizations</a></li><li><a href="/dataset">Resources</a></li> 
+        <li><a href = "/content/?q=news">News</a></li>
+            <li><a href = "/content/?q=help">Help</a></li> 
+            <li><a href = "/content/?q=about">About</a></li> </ul></nav>
+       
+    </div>
+  </div>
+</header>
+
+  
+    <div role="main">
+      <div id="content" class="container">
+        
+          
+            <div class="flash-messages">
+              
+                
+              
+            </div>
+          
+
+          
+            <div class="toolbar">
+              
+                
+                  <ol class="breadcrumb">
+                    
+<li class="home"><a href="/"><i class="fa fa-home"></i><span> Home</span></a></li>
+                    
+  
+    
+    
+      
+      
+      <li><a href="/organization">Organizations</a></li>
+      <li><a href="/organization/us-mn-state-mngeo">Geospatial Information Office</a></li>
+    
+    <li class="active"><a class=" active" href="/dataset/loc-pop-centers">City and Township ...</a></li>
+  
+
+                  </ol>
+                
+              
+            </div>
+          
+
+          <div class="row wrapper">
+            
+            
+            
+
+            
+              <aside class="secondary col-sm-3">
+                
+                
+
+  
+
+  
+    
+
+  
+    <section class="module module-narrow">
+      <div class="module context-info">
+        <div class="module-content">
+          
+            
+              <h1 class="heading">City and Township Population Centers, Minnesota</h1>
+            
+            
+              
+              <div class="nums">
+                <dl>
+                  <dt>Followers</dt>
+                  <dd data-module="followers-counter" data-module-id="d5781193-7045-4244-956f-4497a4ab8def" data-module-num_followers="1"><span>1</span></dd>
+                </dl>
+              </div>
+            
+            
+              
+                <div class="follow_button">
+                  
+                </div>
+              
+            
+          
+        </div>
+      </div>
+    </section>
+  
+
+  
+
+  
+    
+      
+      
+
+
+
+
+  
+  <div class="module module-narrow module-shallow context-info">
+    
+      <h2 class="module-heading"><i class="fa fa-building-o"></i> Organization</h2>
+    
+    <section class="module-content">
+      
+      
+        <div class="image">
+          <a href="/organization/us-mn-state-mngeo">
+            <img src="https://gisdata.mn.gov/agencyLogos/mnLogo.jpg" width="200" alt="us-mn-state-mngeo" />
+          </a>
+        </div>
+      
+      
+      <h1 class="heading">Geospatial Information Office
+        
+      </h1>
+      
+      
+      
+        <p>
+          Division of MNIT responsible for policy related to GIS and geospatial information
+          <a href="/organization/about/us-mn-state-mngeo">read more</a>
+        </p>
+      
+      
+      
+      
+    </section>
+  </div>
+  
+    
+  
+
+  
+    
+
+  <section class="module module-narrow social">
+    
+      <h2 class="module-heading"><i class="fa fa-share-square-o"></i> Social</h2>
+    
+    
+      <ul class="nav nav-simple">
+        <li class="nav-item"><a href="https://twitter.com/share?url=https://gisdata.mn.gov/dataset/loc-pop-centers" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a></li>
+        <li class="nav-item"><a href="https://www.facebook.com/sharer.php?u=https://gisdata.mn.gov/dataset/loc-pop-centers" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+      </ul>
+    
+  </section>
+
+  
+
+  
+    
+
+
+  
+    
+      
+        <section class="module module-narrow module-shallow license">
+          
+            <h2 class="module-heading"><i class="icon-medium fa fa-lock"></i> License</h2>
+          
+          
+            <p class="module-content">
+              
+                
+  
+    <span property="dc:rights">License not specified</span>
+  
+
+                
+              
+	      <br>
+	      <a href="/content/?q=help/legal_disclaimer">Legal disclaimer</a>
+
+            </p>
+          
+        </section>
+      
+    
+  
+
+  
+
+
+              </aside>
+            
+
+            
+              <div class="primary col-sm-9 col-xs-12">
+                
+                
+                  <article class="module">
+                    
+                      <header class="module-content page-header">
+                        
+                        <ul class="nav nav-tabs">
+                          
+  <li class="active"><a href="/dataset/loc-pop-centers"><i class="fa fa-sitemap"></i> Resource</a></li>
+  <li><a href="/dataset/groups/loc-pop-centers"><i class="fa fa-users"></i> Categories</a></li>
+  <li><a href="/dataset/activity/loc-pop-centers"><i class="fa fa-clock-o"></i> Activity Stream</a></li>
+
+                        </ul>
+                      </header>
+                    
+                    <div class="module-content">
+                      
+                      
+  
+    
+      
+    
+
+  
+    
+    <h1>
+      
+        City and Township Population Centers, Minnesota
+        
+        
+      
+    </h1>
+    
+      
+        <div class="notes embedded-content">
+         This layer contains cities, townships, reservations, and unorganized territories in the state of Minnesota, represented with point geometry for cartographic purposes. This dataset generally includes only populated places; there may be other named townships and territories which were not included. The population counts for these populated places have also been included, based on recent available US Census data.
+        </div>
+      
+    
+    
+    <span class="insert-comment-thread"></span>
+  
+
+  
+    
+<section id="dataset-resources" class="resources" style="padding-top: 25px">
+  
+    
+      <ul class="resource-list">
+        
+          
+            
+
+
+<li class="resource-item" data-id="07c5880b-84f9-47cc-938d-2367aa54257d">
+  
+
+    Static Preview - Sample Image<span class="format-label" property="dc:format" data-format="jpeg">JPEG</span>
+    
+
+
+  
+  
+    <p class="description">
+     </p>
+  
+  
+  
+  <div class="dropdown btn-group">
+        <a href="https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_mngeo/loc_pop_centers/metadata/preview.jpg" preview="/dataset/loc-pop-centers/resource/07c5880b-84f9-47cc-938d-2367aa54257d" class="JPEG btn btn-primary dropdown-toggle resource-url-analytics" >
+            Download</a>
+  </div>
+  
+  
+</li>
+          
+            
+
+
+<li class="resource-item" data-id="a0aa7cb7-f896-442f-8784-a0ddf4e32048">
+  
+
+    Shapefile<span class="format-label" property="dc:format" data-format="shp">SHP</span>
+    
+
+
+  
+  
+    <p class="description">
+     </p>
+  
+  
+  
+  <div class="dropdown btn-group">
+        <a href="https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_mngeo/loc_pop_centers/shp_loc_pop_centers.zip" preview="/dataset/loc-pop-centers/resource/a0aa7cb7-f896-442f-8784-a0ddf4e32048" class="SHP btn btn-primary dropdown-toggle resource-url-analytics" >
+            Download</a>
+  </div>
+  
+  
+</li>
+          
+            
+
+
+<li class="resource-item" data-id="c75c6909-957a-4cd1-aa90-c59bd00eff06">
+  
+
+    ESRI File Geodatabase<span class="format-label" property="dc:format" data-format="fgdb">fgdb</span>
+    
+
+
+  
+  
+    <p class="description">
+     </p>
+  
+  
+  
+  <div class="dropdown btn-group">
+        <a href="https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_mngeo/loc_pop_centers/fgdb_loc_pop_centers.zip" preview="/dataset/loc-pop-centers/resource/c75c6909-957a-4cd1-aa90-c59bd00eff06" class="fgdb btn btn-primary dropdown-toggle resource-url-analytics" >
+            Download</a>
+  </div>
+  
+  
+</li>
+          
+            
+
+
+<li class="resource-item" data-id="c70a7ae8-9ac7-490d-bc48-67a998b59c61">
+  
+
+    OGC GeoPackage<span class="format-label" property="dc:format" data-format="gpkg">gpkg</span>
+    
+
+
+  
+  
+    <p class="description">
+     </p>
+  
+  
+  
+  <div class="dropdown btn-group">
+        <a href="https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_mngeo/loc_pop_centers/gpkg_loc_pop_centers.zip" preview="/dataset/loc-pop-centers/resource/c70a7ae8-9ac7-490d-bc48-67a998b59c61" class="gpkg btn btn-primary dropdown-toggle resource-url-analytics" >
+            Download</a>
+  </div>
+  
+  
+</li>
+          
+            
+
+
+<li class="resource-item" data-id="76aacca4-6417-4328-994a-1ce242078ddd">
+  
+
+    Full Metadata Record<span class="format-label" property="dc:format" data-format="html">HTML</span>
+    
+
+
+  
+  
+    <p class="description">
+     </p>
+  
+  
+  
+  <div class="dropdown btn-group">
+        <a href="https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_mngeo/loc_pop_centers/metadata/metadata.html" preview="/dataset/loc-pop-centers/resource/76aacca4-6417-4328-994a-1ce242078ddd" class="HTML btn btn-primary dropdown-toggle resource-url-analytics" >
+            Download</a>
+  </div>
+  
+  
+</li>
+          
+        
+      </ul>
+    
+    
+</section>
+  
+
+  
+    
+  <section class="tags">
+    
+
+
+  <ul class="tag-list well">
+    
+      <li>
+        <a class="tag" href="/dataset?tags=cities">cities</a>
+      </li>
+    
+      <li>
+        <a class="tag" href="/dataset?tags=city">city</a>
+      </li>
+    
+      <li>
+        <a class="tag" href="/dataset?tags=municipalities">municipalities</a>
+      </li>
+    
+      <li>
+        <a class="tag" href="/dataset?tags=municipality">municipality</a>
+      </li>
+    
+      <li>
+        <a class="tag" href="/dataset?tags=populated+places">populated places</a>
+      </li>
+    
+      <li>
+        <a class="tag" href="/dataset?tags=reservations">reservations</a>
+      </li>
+    
+      <li>
+        <a class="tag" href="/dataset?tags=townships">townships</a>
+      </li>
+    
+      <li>
+        <a class="tag" href="/dataset?tags=unorganized+territories">unorganized territo...</a>
+      </li>
+    
+  </ul>
+
+  </section>
+
+  
+
+  
+    <section class="additional-info">
+  <h3>Additional Info </h3>
+  <table class="table table-striped table-bordered table-condensed">
+    <thead>
+      <tr style="display:none">
+        <th scope="col">Field</th>
+        <th scope="col">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+
+
+   
+   
+   
+   
+
+
+
+
+    
+
+
+
+      
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsAccessConst</th>
+            <td class="dataset-details" property="rdf:value">None</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsCurrentRef</th>
+            <td class="dataset-details" property="rdf:value">Data was created by referencing a 'CTU' (cities, townships, unorganized territories) database created and updated by MnGeo in 2009. The population column was added by MnGeo in 2017.</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsMetadataUrl</th>
+            <td class="dataset-details" property="rdf:value">https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_mngeo/loc_pop_centers/metadata/metadata.html</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsModifiedDate</th>
+            <td class="dataset-details" property="rdf:value">2021-05-12 00:00:12</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsOriginator</th>
+            <td class="dataset-details" property="rdf:value">Minnesota Geospatial Information Office (MnGeo)</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsPeriodOfContent</th>
+            <td class="dataset-details" property="rdf:value">3/1/2017</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">dsPurpose</th>
+            <td class="dataset-details" property="rdf:value">The dataset was developed largely for cartographic purposes, for the display of concentrations of populations. It can be symbolized with the available attributes to show the largest cities in the state or county (typically county seats), as well as very small populated cities, townships, unorganized territories, and tribal populations. The dataset can also be symbolized by population count where figures are available.</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">gdrsDsGuid</th>
+            <td class="dataset-details" property="rdf:value">{04a1745c-74f3-4927-81b9-8171995fbc9f}</td>
+          </tr>
+        
+          
+          <tr rel="dc:relation" resource="_:extra">
+            <th scope="row" class="dataset-label" property="rdfs:label">spatial</th>
+            <td class="dataset-details" property="rdf:value">{"type":"Polygon","coordinates":[[[-96.820245, 43.439127],[-96.820245, 48.995574], [-89.616732, 48.995574], [-89.616732, 43.439127], [-96.820245, 43.439127]]]}</td>
+          </tr>
+        
+      
+
+      
+    </tbody>
+  </table>
+</section>
+  
+
+
+   
+    
+      
+
+<section class="module module-narrow dataset-map">
+<h2 class="module-heading"><i class="icon-medium fa fa-globe icon-globe"></i> Dataset extent</h2>
+  
+
+
+<div class="dataset-map" data-module="dataset-map" data-extent="{&#34;type&#34;:&#34;Polygon&#34;,&#34;coordinates&#34;:[[[-96.820245, 43.439127],[-96.820245, 48.995574], [-89.616732, 48.995574], [-89.616732, 43.439127], [-96.820245, 43.439127]]]}" data-module-site_url="&#34;https://gisdata.mn.gov/&#34;" data-module-map_config="{}">
+  <div id="dataset-map-container"></div>
+  <div id="dataset-map-attribution">
+    
+  <div>Map data &copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors</div>
+  
+    <div>Tiles by <a href="http://stamen.com">Stamen Design</a> (<a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>)</div>
+  
+
+
+  </div>
+</div>
+
+
+</section>
+    
+
+
+
+
+                    </div>
+                  </article>
+                
+              </div>
+            
+          </div>
+        
+      </div>
+    </div>
+  
+    <footer class="site-footer" style="background:#003865; color: white">
+  <div class="container" >
+    
+    <div class="row"  >
+      <div class="col-xs-6 col-md-4 footer-links">
+        <h3>Resources</h3>
+        <ul class="unstyled">
+
+          <li><a href="/content/?q=help/what_is_a_resource">What is a resource?</a>          </li>
+          <li><a href="/content/?q=help/accessing_using_resources">Accessing & Using Resources</a></li>
+          <li><a href="/content/?q=help/maintain_resources">Maintaining Resources</a></li>
+          <li><a href="http://docs.ckan.org/en/ckan-2.2.3/api.html">Data access API</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-6 col-md-4 footer-links">
+        <h3>Publishing</h3>
+        <ul class="unstyled">
+
+          <li><a href="/content/?q=about">About the Commons</a>          </li>
+          <li><a href="/content/?q=help/become_publisher">Becoming a Publisher</a>          </li>
+          <li><a href="/content/?q=help/publisher_expectations">Expectations for Publishers</a></li>
+          <li><a href="/content/?q=help/publishing_overview">How do I publish resources?</a></li>
+
+
+        </ul>
+      </div>
+      <div class="col-xs-6 col-md-4 footer-links">
+        <h3>Connect with us</h3>
+        <ul class="unstyled">
+          <li><a href="mailto:gisinfo.mngeo@state.mn.us">Email us</a></li>
+        </ul>
+
+        <ul class="unstyled">
+          <li>Subscribe for e-mail updates</li>
+        </ul>
+        <form  action="https://public.govdelivery.com/accounts/MNIT/subscribers/qualify" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="H2h7ipmCjijHH226zV1zvLT//LB+3yi/WrH7sm2orBVehtTeubuHT+gMcFo6TnqLanvGPgKbWBnDx/NhPKR8vg==" />
+<input type="hidden" name="topic_id" id="topic_id" value="MNIT_62" />
+<input style='width: 160px; border: 1px solid black; margin-top:23px; padding:5px 5px; color:black;' type="text"  name="email" id="email"  value="" autocomplete="off"
+                          placeholder="Enter your e-mail." />
+          <button type="submit" class="buttonGreen">Subscribe </button>
+        </form>
+
+
+
+
+      </div>
+
+
+    </div>
+    
+  </div>
+
+  
+    
+  
+</footer>
+  
+    
+    
+    
+  
+    
+
+  
+      <!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-Y2RK7KCPKT"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-Y2RK7KCPKT');</script>
+  
+    
+
+      
+          <script type="application/ld+json">
+           {
+    "@context": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "schema": "http://schema.org/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@graph": [
+        {
+            "@id": "https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def/resource/07c5880b-84f9-47cc-938d-2367aa54257d",
+            "@type": "schema:DataDownload",
+            "schema:encodingFormat": "JPEG",
+            "schema:name": "Static Preview - Sample Image",
+            "schema:url": "https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_mngeo/loc_pop_centers/metadata/preview.jpg"
+        },
+        {
+            "@id": "https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def/resource/c75c6909-957a-4cd1-aa90-c59bd00eff06",
+            "@type": "schema:DataDownload",
+            "schema:encodingFormat": "fgdb",
+            "schema:name": "ESRI File Geodatabase",
+            "schema:url": "https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_mngeo/loc_pop_centers/fgdb_loc_pop_centers.zip"
+        },
+        {
+            "@id": "https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def/resource/c70a7ae8-9ac7-490d-bc48-67a998b59c61",
+            "@type": "schema:DataDownload",
+            "schema:encodingFormat": "gpkg",
+            "schema:name": "OGC GeoPackage",
+            "schema:url": "https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_mngeo/loc_pop_centers/gpkg_loc_pop_centers.zip"
+        },
+        {
+            "@id": "_:N5c1eea6ddfee435ea63a1b25f1121478",
+            "@type": "schema:Thing",
+            "schema:name": "location",
+            "schema:url": "https://gisdata.mn.gov/group/b16a1a0d-6bbb-43ad-ad3d-c63c1ac0c522"
+        },
+        {
+            "@id": "_:N970c1f75f0e6418fbd4337182a5f46f4",
+            "@type": "schema:Place",
+            "schema:geo": {
+                "@id": "_:Nd580d7a5ff5145a3ade11adcae47148b"
+            }
+        },
+        {
+            "@id": "_:N50720fea216741e88e302b31944a17f4",
+            "@type": "schema:ContactPoint",
+            "schema:contactType": "customer service",
+            "schema:url": "https://gisdata.mn.gov"
+        },
+        {
+            "@id": "https://gisdata.mn.gov/organization/fdd407b9-9779-4c1c-b53d-e56682f39fc0",
+            "@type": "schema:Organization",
+            "schema:contactPoint": {
+                "@id": "_:N50720fea216741e88e302b31944a17f4"
+            },
+            "schema:name": "Geospatial Information Office"
+        },
+        {
+            "@id": "https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def/resource/76aacca4-6417-4328-994a-1ce242078ddd",
+            "@type": "schema:DataDownload",
+            "schema:encodingFormat": "HTML",
+            "schema:name": "Full Metadata Record",
+            "schema:url": "https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_mngeo/loc_pop_centers/metadata/metadata.html"
+        },
+        {
+            "@id": "https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def/resource/a0aa7cb7-f896-442f-8784-a0ddf4e32048",
+            "@type": "schema:DataDownload",
+            "schema:encodingFormat": "SHP",
+            "schema:name": "Shapefile",
+            "schema:url": "https://resources.gisdata.mn.gov/pub/gdrs/data/pub/us_mn_state_mngeo/loc_pop_centers/shp_loc_pop_centers.zip"
+        },
+        {
+            "@id": "https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def",
+            "@type": "schema:Dataset",
+            "schema:about": {
+                "@id": "_:N5c1eea6ddfee435ea63a1b25f1121478"
+            },
+            "schema:dateModified": "2021-05-12T08:04:56.072533",
+            "schema:datePublished": "2017-03-03T11:01:57.160502",
+            "schema:description": "This layer contains cities, townships, reservations, and unorganized territories in the state of Minnesota, represented with point geometry for cartographic purposes. This dataset generally includes only populated places; there may be other named townships and territories which were not included. The population counts for these populated places have also been included, based on recent available US Census data.",
+            "schema:distribution": [
+                {
+                    "@id": "https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def/resource/a0aa7cb7-f896-442f-8784-a0ddf4e32048"
+                },
+                {
+                    "@id": "https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def/resource/76aacca4-6417-4328-994a-1ce242078ddd"
+                },
+                {
+                    "@id": "https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def/resource/c75c6909-957a-4cd1-aa90-c59bd00eff06"
+                },
+                {
+                    "@id": "https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def/resource/07c5880b-84f9-47cc-938d-2367aa54257d"
+                },
+                {
+                    "@id": "https://gisdata.mn.gov/dataset/d5781193-7045-4244-956f-4497a4ab8def/resource/c70a7ae8-9ac7-490d-bc48-67a998b59c61"
+                }
+            ],
+            "schema:includedInDataCatalog": {
+                "@id": "_:N62c2a305926f4b308d900dd58413b973"
+            },
+            "schema:keywords": [
+                "city",
+                "townships",
+                "municipalities",
+                "cities",
+                "populated places",
+                "reservations",
+                "municipality",
+                "unorganized territories"
+            ],
+            "schema:license": "License not specified",
+            "schema:name": "City and Township Population Centers, Minnesota",
+            "schema:publisher": {
+                "@id": "https://gisdata.mn.gov/organization/fdd407b9-9779-4c1c-b53d-e56682f39fc0"
+            },
+            "schema:spatialCoverage": {
+                "@id": "_:N970c1f75f0e6418fbd4337182a5f46f4"
+            },
+            "schema:url": "https://gisdata.mn.gov/dataset/loc-pop-centers"
+        },
+        {
+            "@id": "_:Nd580d7a5ff5145a3ade11adcae47148b",
+            "@type": "schema:GeoShape",
+            "schema:polygon": "{\"type\":\"Polygon\",\"coordinates\":[[[-96.820245, 43.439127],[-96.820245, 48.995574], [-89.616732, 48.995574], [-89.616732, 43.439127], [-96.820245, 43.439127]]]}"
+        },
+        {
+            "@id": "_:N62c2a305926f4b308d900dd58413b973",
+            "@type": "schema:DataCatalog",
+            "schema:description": "",
+            "schema:name": "Minnesota Geospatial Commons",
+            "schema:url": "https://gisdata.mn.gov"
+        }
+    ]
+}
+          </script>
+      
+  
+
+  <script>document.getElementsByTagName('html')[0].className += ' js';</script>
+<script type="text/javascript" src="/fanstatic/vendor/:version:2020-05-05T10:47:08/jquery.min.js"></script>
+<script type="text/javascript" src="/fanstatic/vendor/:version:2020-05-05T10:47:08/:bundle:bootstrap/js/bootstrap.min.js;jed.min.js;moment-with-locales.js;select2/select2.min.js"></script>
+<script type="text/javascript" src="/fanstatic/base/:version:2020-05-05T10:47:07/:bundle:plugins/jquery.inherit.min.js;plugins/jquery.proxy-all.min.js;plugins/jquery.url-helpers.min.js;plugins/jquery.date-helpers.min.js;plugins/jquery.slug.min.js;plugins/jquery.slug-preview.min.js;plugins/jquery.truncator.min.js;plugins/jquery.masonry.min.js;plugins/jquery.form-warning.min.js;plugins/jquery.images-loaded.min.js;sandbox.min.js;module.min.js;pubsub.min.js;client.min.js;notify.min.js;i18n.min.js;main.min.js;modules/select-switch.min.js;modules/slug-preview.min.js;modules/basic-form.min.js;modules/confirm-action.min.js;modules/api-info.min.js;modules/autocomplete.min.js;modules/custom-fields.min.js;modules/data-viewer.min.js;modules/table-selectable-rows.min.js;modules/resource-form.min.js;modules/resource-upload-field.min.js;modules/resource-reorder.min.js;modules/resource-view-reorder.min.js;modules/follow.min.js;modules/activity-stream.min.js;modules/dashboard.min.js;modules/resource-view-embed.min.js;view-filters.min.js;modules/resource-view-filters-form.min.js;modules/resource-view-filters.min.js;modules/table-toggle-more.min.js;modules/dataset-visibility.min.js;modules/media-grid.min.js;modules/image-upload.min.js;modules/followers-counter.min.js"></script>
+<script type="text/javascript" src="/fanstatic/ckanext-spatial/:version:2018-08-27T10:54:54/:bundle:js/vendor/leaflet/leaflet.js;js/common_map.js;js/dataset_map.js"></script>
+<script type="text/javascript" src="/fanstatic/js/:version:2023-04-27T07:03:49.53/:bundle:vendor/linkify/linkify.min.js;vendor/linkify/linkify-jquery.min.js;mngeo.js"></script></body>
+</html>

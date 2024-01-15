@@ -1,0 +1,240 @@
+---
+title: "FOX"
+format: html
+editor: visual
+author: "Alicia Severiano Perez"
+---
+
+##Web scrapping for FOX
+##I am going to comment out like almost all of this only because it takes a lot from my computer and because I already obtained the data i needed, but can be uncommented to test out
+
+```{r}
+library(rvest)
+library(dplyr)
+library(tidyr)
+```
+
+Some Sources I Used: https://stackoverflow.com/questions/58126097/trycatch-function-works-on-most-non-existent-urls-but-it-does-not-work-in-at-l
+####I pretty much copied what id did for mpr news 
+
+https://statsandr.com/blog/web-scraping-in-r/
+
+```{r}
+
+# data <- read_html("/Users/aliciaseveriano/Documents/Sophmore\ Year/DS/Final\ Project/Code/Test\ Data/WebScrapping/Minnesota\ teachers\ site_fox9.html")
+# 
+# # Extract URLs
+# base_url <- "https://www.fox9.com" 
+# urls <- data %>%
+#   html_elements("a") %>%
+#   html_attr("href")
+# 
+# # Initialize an empty data frame
+# fox_teachers <- data.frame(
+#   URL = character(0),
+#   Headline = character(0),
+#   Time = character(0),
+#   stringsAsFactors = FALSE
+# )
+# 
+# # Loop through each URL and extract information
+# for (url in urls) {
+#   # Handling relative URLs
+#   full_url <- ifelse(startsWith(url, "http"), url, paste0(base_url, url))
+#   
+#   tryCatch({
+#     # Attempt to read the HTML
+#     article <- read_html(full_url)
+#     
+#     # Extract headline
+#     headline <- article %>%
+#       html_elements(".headline") %>%
+#       html_text()
+#     
+# ##if there is no headline for a row, then add n/a
+#     if (length(headline) == 0) {
+#       headline <- "n/a"
+#     }
+#     
+#     time <- article %>%
+#       html_elements("time") %>%
+#       html_text()
+#     
+#     ##if no time for row, add n/a
+#     if (length(time) == 0) {
+#       time <- "n/a"
+#     }
+#     
+#     # Append data to the data frame
+#     fox_teachers <- bind_rows(articles_df, data.frame(URL = full_url, Headline = headline, Time=time))
+#   }, error = function(e) {
+#     cat("Error processing URL:", full_url, "\n")
+#   })
+# }
+# 
+# # Print the resulting data frame
+# print(articles_df)
+```
+
+
+##repeat for students 
+```{r}
+
+# Read HTML content
+# data <- read_html("/Users/aliciaseveriano/Documents/Sophmore\ Year/DS/Final\ Project/Code/Test\ Data/WebScrapping/Minnesota_students site_fox9.html")
+# 
+# # Extract URLs
+# base_url <- "https://www.fox9.com" 
+# urls <- data %>%
+#   html_elements("a") %>%
+#   html_attr("href")
+# 
+# # Initialize an empty data frame
+# fox_students <- data.frame(
+#   URL = character(0),
+#   Headline = character(0),
+#   Time = character(0),
+#   stringsAsFactors = FALSE
+# )
+# 
+# # Loop through each URL and extract information
+# for (url in urls) {
+#   # Handling relative URLs
+#   full_url <- ifelse(startsWith(url, "http"), url, paste0(base_url, url))
+#   
+#   tryCatch({
+#     # Attempt to read the HTML
+#     article <- read_html(full_url)
+#     
+#     # Extract headline
+#     headline <- article %>%
+#       html_elements(".headline") %>%
+#       html_text()
+#     
+#     # Skip URLs without headlines
+#     if (length(headline) == 0) {
+#       headline <- "n/a"
+#     }
+#     
+#     time <- article %>%
+#       html_elements("time") %>%
+#       html_text()
+#     
+#     
+#     if (length(time) == 0) {
+#       time <- "n/a"
+#     }
+#     
+#     # Append data to the data frame
+#     fox_students <- bind_rows(articles_df, data.frame(URL = full_url, Headline = headline, Time=time))
+#   }, error = function(e) {
+#     cat("Error processing URL:", full_url, "\n")
+#   })
+# }
+
+# Print the resulting data frame
+```
+
+Making it into a csv
+##I am going to comment out making a csv because i already have made this (This is alicia on 12th december), but i did use the following code
+
+```{r}
+#file_path <- as.character('/Users/aliciaseveriano/fox_student.csv')
+
+
+#write_csv(fox_students, file_path)
+
+```
+
+```{r}
+#file_path <- as.character('/Users/aliciaseveriano/fox_teacher.csv')
+
+
+#write_csv(fox_teachers, file_path)
+
+```
+
+##Messing around with data
+
+```{r}
+library(tidyr)
+library(tidyverse)
+library(dplyr)
+library(urltools)
+library(readr)
+fox_teacher <- read_csv("/Users/aliciaseveriano/Documents/Sophmore\ Year/DS/Final\ Project/Code/fox_teacher.csv")
+
+fox_student <- read_csv("/Users/aliciaseveriano/Documents/Sophmore\ Year/DS/Final\ Project/Code/fox_student.csv")
+
+
+```
+
+```{r}
+fox_teacher <- fox_teacher %>%
+  filter(Headline != "n/a")
+
+fox_student <- fox_student %>%
+  filter(Headline != "n/a")
+
+
+```
+
+```{r}
+
+words_to_count <- c("union", "struggle", "tired", "money", "raise", "new", "poor", "lack", "happy", "joy", "fun", "want", "need")
+
+# Function to count occurrences of multiple words in a given string
+count_words <- function(text, words) {
+  sapply(words, function(word) sum(grepl(word, tolower(text))))
+}
+
+# Apply the function to each abstract in the 'abstract' column
+word_counts_foxT<- fox_teacher %>%
+  rowwise() %>%
+  mutate(word_counts = list(sapply(Headline, count_words, words = words_to_count))) %>%
+  unnest_wider(word_counts) %>%
+  summarise(across(where(is.numeric), sum)) %>%
+  pivot_longer(everything(), names_to = "word", values_to = "total_count") %>%
+  arrange(total_count) %>%
+  mutate(word = factor(word, levels = word))
+
+
+word_counts_foxT <-word_counts_foxT %>%
+filter(word != c("word_count") ) %>%
+filter(word != c("print_page") )
+```
+
+```{r}
+student_words_to_count <- c("struggle", "tired", "poor", "lack", "shooting", "joy", "fun", "need")
+
+student_word_counts_foxS <- fox_student %>%
+  rowwise() %>%
+  mutate(word_counts = list(sapply(Headline, count_words, words = student_words_to_count))) %>%
+  unnest_wider(word_counts) %>%
+  summarise(across(where(is.numeric), sum)) %>%
+  pivot_longer(everything(), names_to = "word", values_to = "total_count") %>%
+  arrange(total_count) %>%
+  mutate(word = factor(word, levels = word))
+
+
+student_word_counts_foxS <-student_word_counts_foxS %>%
+  filter(word != c("word_count") ) %>%
+  filter(word != c("print_page") )
+```
+
+```{r}
+student_word_counts_foxS %>%
+      ggplot(aes(y = word, x = total_count)) +
+      geom_bar(stat = "identity", fill = "lavender", col="black") +
+      labs(title = "Word Occurrences in MPR Articles related to Teachers in Minnesota ", y = "Words", x = "Total Count")+
+      theme_classic()+
+      theme(plot.title = element_text(face = "bold", vjust = 0.01, size=10),
+            axis.text.x=element_blank(),
+            axis.title=element_blank(),
+            axis.line.y = element_line(size = 0.0),
+            axis.line.x = element_line(size = 0.0),
+            axis.ticks.x=element_blank(),
+            panel.grid = element_blank(),
+            panel.background = element_blank(),
+            text = element_text(family = "Times New Roman")) 
+```

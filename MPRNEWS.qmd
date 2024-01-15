@@ -1,0 +1,494 @@
+---
+title: "MPR news"
+format: html
+editor: visual
+author: "Alicia Severiano Perez"
+---
+
+##This was the webscrapping for mpr ##Helpful code given by leslie -\> Used later on
+
+```{r}
+# For getting title and time from a single article
+# data %>%
+#     html_elements("time") %>%
+#     html_text()
+# 
+# data %>%
+#     html_elements(".hdg-headline") %>%
+#     html_text()
+# 
+# 
+# # For getting all the URLs on a page
+# all_links <- data %>%
+#     html_elements("a") %>%
+#     html_attr("href")
+```
+
+##I am going to comment out like almost all of this only because it takes a lot from my computer and because I already obtained the data i needed, but can be uncommented to test out
+
+###Actually obtaining the info from the articles
+
+```{r}
+#library(rvest)
+library(dplyr)
+
+# Read HTML content
+#data <- read_html("/Users/aliciaseveriano/Documents/Sophmore Year/DS/Final Project/work/R-File/Data/Minnesota_teachers_complete_MPR.html")
+
+# Extract URLs
+#base_url <- "https://www.mprnews.org" 
+# urls <- data %>%
+#   html_elements("a") %>%
+#   html_attr("href")
+# 
+# # Initialize an empty data frame
+# articles_df <- data.frame(
+#   URL = character(0),
+#   Headline = character(0),
+#   Time = character(0),
+#   stringsAsFactors = FALSE
+# )
+# 
+# # Loop through each URL and extract information
+# for (url in urls) {
+#   # Handling relative URLs
+#   full_url <- ifelse(startsWith(url, "http"), url, paste0(base_url, url))
+#   
+#   tryCatch({
+#     # Attempt to read the HTML
+#     article <- read_html(full_url)
+#     
+#     # Extract headline
+#     headline <- article %>%
+#       html_elements(".hdg-headline") %>%
+#       html_text()
+#     
+#     if (length(headline) == 0) {
+#       headline <- "n/a"
+#     }
+#     
+#     time <- article %>%
+#       html_elements("time") %>%
+#       html_text()
+#     
+#     
+#     if (length(time) == 0) {
+#       time <- "n/a"
+#     }
+#     
+#     # Append data to the data frame
+#     articles_df <- bind_rows(articles_df, data.frame(URL = full_url, Headline = headline))
+#   }, error = function(e) {
+#     cat("Error processing URL:", full_url, "\n")
+#   })
+# }
+# 
+# # Print the resulting data frame
+# print(articles_df)
+
+```
+
+##Student data (Just repeat)
+
+```{r}
+# library(rvest)
+# library(dplyr)
+# 
+# # Read HTML content
+# data <- read_html("/Users/aliciaseveriano/Documents/Sophmore Year/DS/Final Project/work/R-File/Code/Minnesota_students_mprnews.org_Google_Search.html")
+# 
+# # Extract URLs
+# base_url <- "https://www.mprnews.org" 
+# urls <- data %>%
+#   html_elements("a") %>%
+#   html_attr("href")
+# 
+# # Initialize an empty data frame
+# MPR_Students <- data.frame(
+#   URL = character(0),
+#   Headline = character(0),
+#   Content_Pubdate = character(0),
+#   Content_Subtitle = character(0),
+#   Content_Wrapper = character(0),
+#   stringsAsFactors = FALSE
+# )
+# 
+# # Loop through each URL and extract information
+# for (url in urls) {
+#   # Handling relative URLs
+#   full_url <- ifelse(startsWith(url, "http"), url, paste0(base_url, url))
+#   
+#   tryCatch({
+#     # Attempt to read the HTML
+#     article <- read_html(full_url)
+#     
+#     # Extract headline
+#     headline <- article %>%
+#       html_elements(".hdg-headline") %>%
+#       html_text()
+#     
+#     # Skip URLs without headlines
+#     if (length(headline) == 0) {
+#         headline <- "n/a"
+#     }
+#   content_pubdate <- article %>%
+#     html_elements(".content_pubdate") %>%
+#     html_text()
+# 
+#   if (length(content_pubdate) == 0) {
+#       content_pubdate <- "n/a"
+#   }
+#   
+#   
+#   content_subtitle <- article %>%
+#     html_elements(".content_subtitle") %>%
+#     html_text()
+# 
+#   if (length(content_subtitle) == 0) {
+#       content_subtitle <- "n/a"
+#   }
+#   
+#     
+#   content_wrapper <- article %>%
+#     html_elements(".content_wrapper") %>%
+#     html_text()
+# 
+#   if (length(content_subtitle) == 0) {
+#       content_wrapper <- "n/a"
+#   }
+#     
+#     # Append data to the data frame
+#     MPR_Students <- bind_rows(articles_df, data.frame(URL = full_url, Headline = headline, Content_Pubdate = content_pubdate, Content_Subtitle = content_subtitle, Content_Wrapper = content_wrapper))
+#   }, error = function(e) {
+#     cat("Error processing URL:", full_url, "\n")
+#   })
+# }
+
+
+```
+
+###Making into csv ##I am going to comment out making a csv because i already have made this (This is alicia on 12th december), but i did use the following code
+
+```{r}
+#file_path <- as.character('/Users/aliciaseveriano/mpr_teacher_mn_data.csv')
+
+
+#write_csv(articles_df, file_path)
+```
+
+```{r}
+#file_path <- as.character('/Users/aliciaseveriano/mpr_student_mn_data.csv')
+
+
+#write_csv(MPR_Students, file_path)
+```
+
+###Playing around with the data to make bar graphs
+
+```{r}
+library(tidyr)
+library(tidyverse)
+library(dplyr)
+library(urltools)
+library(readr)
+mpr_data_teacher<- read_csv("/Users/aliciaseveriano/Documents/Sophmore\ Year/DS/Final\ Project/Code/mpr_teacher_data.csv")
+
+words_to_count <- c("union", "struggle", "tired", "money", "raise", "new", "poor", "lack", "happy", "joy", "fun", "want", "need")
+
+# Function to count occurrences of multiple words in a given string
+count_words <- function(text, words) {
+  sapply(words, function(word) sum(grepl(word, tolower(text))))
+}
+
+# Apply the function to each abstract in the 'abstract' column
+word_counts_summary <- mpr_data_teacher %>%
+  rowwise() %>%
+  mutate(word_counts = list(sapply(Headline, count_words, words = words_to_count))) %>%
+  unnest_wider(word_counts) %>%
+  summarise(across(where(is.numeric), sum)) %>%
+  pivot_longer(everything(), names_to = "word", values_to = "total_count") %>%
+  arrange(total_count) %>%
+  mutate(word = factor(word, levels = word))
+
+
+word_counts_summary <-word_counts_summary %>%
+filter(word != c("word_count") ) %>%
+filter(word != c("print_page") )
+```
+
+```{r}
+word_counts_summary %>%
+      ggplot(aes(y = word, x = total_count)) +
+      geom_bar(stat = "identity", fill = "lavender", col="black") +
+      labs(title = "Word Occurrences in MPR Articles related to Teaches in Minnesota ", y = "Words", x = "Total Count")+
+      theme_classic()+
+      theme(plot.title = element_text(face = "bold", vjust = 0.01, size=10),
+            axis.text.x=element_blank(),
+            axis.title=element_blank(),
+            axis.line.y = element_line(size = 0.0),
+            axis.line.x = element_line(size = 0.0),
+            axis.ticks.x=element_blank(),
+            panel.grid = element_blank(),
+            panel.background = element_blank(),
+            text = element_text(family = "Times New Roman")) 
+```
+
+```{r}
+mpr_student<- read_csv("/Users/aliciaseveriano/Documents/Sophmore\ Year/DS/Final\ Project/Code/mpr_student_mn_data.csv")
+
+student_words_to_count <- c("struggle", "tired", "poor", "lack", "shooting", "joy", "fun", "need")
+student_word_counts_summary <- mpr_student %>%
+  rowwise() %>%
+  mutate(word_counts = list(sapply(Headline, count_words, words = student_words_to_count))) %>%
+  unnest_wider(word_counts) %>%
+  summarise(across(where(is.numeric), sum)) %>%
+  pivot_longer(everything(), names_to = "word", values_to = "total_count") %>%
+  arrange(total_count) %>%
+  mutate(word = factor(word, levels = word))
+
+
+student_word_counts_summary <-student_word_counts_summary %>%
+  filter(word != c("word_count") ) %>%
+  filter(word != c("print_page") )
+
+```
+
+```{r}
+student_word_counts_summary %>%
+      ggplot(aes(y = word, x = total_count)) +
+      geom_bar(stat = "identity", fill = "lavender", col="black") +
+      labs(title = "Word Occurrences in MPR Articles related to Teaches in Minnesota ", y = "Words", x = "Total Count")+
+      theme_classic()+
+      theme(plot.title = element_text(face = "bold", vjust = 0.01, size=10),
+            axis.text.x=element_blank(),
+            axis.title=element_blank(),
+            axis.line.y = element_line(size = 0.0),
+            axis.line.x = element_line(size = 0.0),
+            axis.ticks.x=element_blank(),
+            panel.grid = element_blank(),
+            panel.background = element_blank(),
+            text = element_text(family = "Times New Roman")) 
+```
+
+##This part only ran b/c I have the dataframes in my own personal enviroment, so it already knew there was the following data frames, so i'm going to comment it out, but this was me joining the dataframes. But this was how i played around with making the terneray graph. Thus from here below it will be commented out, but I did use parts of the following
+
+```{r}
+
+#library(dplyr)
+#library(tidyr)
+
+##Teachers data
+#word_counts_foxT$news_org <- 'Fox News'
+#mpr_word_counts_summary$news_org <- 'MPR'
+#word_counts_summary$news_org <- 'New York Times'
+
+#teacher_news <- bind_rows(word_counts_foxT, mpr_word_counts_summary, word_counts_summary)
+
+## students 
+
+#student_word_counts_foxS$news_org <- 'Fox News'
+#mpr_student_word_counts_summary$news_org <- 'MPR'
+#student_word_counts_summary$news_org <- 'New York Times'
+
+#student_news <- bind_rows(student_word_counts_foxS, mpr_student_word_counts_summary, student_word_counts_summary)
+
+
+
+
+```
+
+##This part i reorganized the dataframe so it fit the standrds needed for the ternary graph
+
+```{r}
+#library(tidyr)
+
+#df_wider_teacher <- teacher_news%>%
+#  pivot_wider(names_from = news_org, values_from = total_count)
+
+#df_wider_teacher_prop<- df_wider_teacher %>%
+#  mutate(Fox_news_prop = df_wider_teacher$`Fox News` / 350) %>%
+#  mutate(MPR_prop = df_wider_teacher$MPR / 329) %>%
+#  mutate(NYT_prop = df_wider_teacher$`New York Times` / 220) 
+  
+  
+#df_wider_teacher_prop$total_count <- rowSums(df_wider_teacher_prop[, c("Fox News", "MPR", "New York Times")])
+
+
+
+```
+
+#Student data \| repeat from above
+
+```{r}
+
+#df_wider_student <- student_news%>%
+ # pivot_wider(names_from = news_org, values_from = total_count)
+
+#df_wider_student_prop<- df_wider_student %>%
+ # mutate(Fox_news_prop = df_wider_student$`Fox News` / 350) %>%
+ # mutate(MPR_prop = df_wider_student$MPR / 330) %>%
+ # mutate(NYT_prop = df_wider_student$`New York Times` / 220)
+
+```
+
+##Here is where i played around with making the ternary graph ##Used the following links to help me out https://plotly.com/r/ternary-plots/ \<- this is the one i used/copied off of https://xang1234.github.io/ternary/ ##PS I learned that i actually don't like this way of making the ternary plot because i wanted to change the scales on the axis and i couldn't with the way i did this; I did not use the other example because for some reason it wasn't plotting the final side to a ternary plot, so it was just making it an x,y graph and I couldn't figure out why (something for me to look further into)
+
+```{r}
+
+# axis layout
+#axis <- function(title) {
+#  list(
+ #   title = title,
+ #   titlefont = list(
+ #     size = 15
+ #   ),
+ #   tickfont = list(
+ #     size = 10
+ #   ),
+ #   tickcolor = 'rgba(0,0,0,0)',
+ #   ticklen = 2.5
+ # )
+#}
+
+
+#fig <- df_wider_teacher_prop %>% plot_ly()
+
+#fig <- fig %>% add_trace(
+  #  type = 'scatterternary',
+  #  mode = 'markers',
+  #  a = ~Fox_news_prop,
+  #  b = ~MPR_prop,
+  #  c = ~NYT_prop,
+  #  text = ~word,
+  #  marker = list( 
+   #   symbol = 5,
+    #  color = '#6D6F8F',
+    #  size = 14,
+    #  line = list('width' = 1)
+   # )
+ # )
+#fig <- fig %>% layout(
+#    ternary = list(
+ #     sum = 1,
+  #    aaxis = axis('Fox 9'),
+  #    baxis = axis('MPR'),
+  #    caxis = axis('NYT')
+  #  )
+ # )
+
+#fig
+
+```
+
+```{r}
+#library(plotly)
+
+#fig <- df_wider_teacher_prop %>% plot_ly()
+#fig <- fig %>% add_trace(
+ # type = 'scatterternary',
+  #mode = 'markers',
+ # a = ~Fox_news_prop,
+ # b = ~MPR_prop,
+ # c = ~NYT_prop,
+#  text = ~word,
+#  marker = list(
+#    symbol = 5,
+ #   color = '#6D6F8F',
+  #  size = 14,
+   # line = list('width' = 1)
+ # )
+#)
+#fig <- fig %>% layout(
+#  ternary = list(
+  #  sum = 1,
+  #  aaxis = axis('Fox 9'),  
+ #   baxis = axis('MPR'),     
+  #  caxis = axis('NYT')     
+ # )
+#)
+
+#fig
+
+
+```
+
+
+```{r}
+library(usmap) #import the package
+library(ggplot2) #use ggplot2 to add layer for visualization
+```
+
+```{r}
+plot_usmap(regions = "counties", include = "MN") + 
+  labs(title = "U.S. counties",
+       subtitle = "This is a blank map of the United States.") 
+```
+
+```{r}
+# Install the required packages if not already installed
+# install.packages(c("sf", "tidyverse", "shiny", "leaflet", "plotly", "maps"))
+
+library(sf)
+library(tidyverse)
+library(shiny)
+library(leaflet)
+library(plotly)
+library(maps)
+
+# Read county shapefile
+mn_cities <- sf::read_sf("Data/shp_loc_pop_centers")
+mn_cities <- sf::read_sf("Data/shp_loc_pop_centers")
+
+# Read race data from census
+# ...
+
+# Read school program data
+MN_SCHOOL_PROGRAMS <- read_csv("school_program_locations.csv")
+# ...
+
+# Create a map with state boundaries
+states_map <- map_data("state")
+
+# Filter school program data
+filtered_df <- MN_SCHOOL_PROGRAMS[
+  !grepl('library', MN_SCHOOL_PROGRAMS$GISNAME, ignore.case = TRUE) &
+    !grepl('District', MN_SCHOOL_PROGRAMS$GISNAME, ignore.case = TRUE) &
+    !grepl('Program', MN_SCHOOL_PROGRAMS$GISNAME, ignore.case = TRUE),
+]
+
+# Count schools per county
+school_count_by_county <- filtered_df %>%
+  group_by(COUNTYNAME) %>%
+  summarize(School_Count = n())
+
+# Join population data with school count data
+# ...
+
+# Define color palette
+new_palette <- colorBin("Purples", domain = result$school_per_population)
+
+# Shiny app server function
+server <- function(input, output) {
+  
+  output$countyMap <- renderLeaflet({
+    leaflet() %>%
+      addPolygons(
+        data = mn_cities,
+        fill = TRUE,
+        fillColor = ~new_palette(result$school_per_population),
+        weight = 2,
+        opacity = 1,
+        color = "white",
+        fillOpacity = 0.7,
+        layerId = ~name,
+        popup = ~paste(name, "<br> School Count: ", result$School_Count, "<br> Population per School: ", result$school_per_population,  sep = "")
+      ) %>%
+      addLegend(pal = new_palette, 
+                values = result$school_per_population, title = 'Population per school')
+  })
+
+  # ... (rest of your Shiny app code)
+}
+
+```
+

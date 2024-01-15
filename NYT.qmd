@@ -1,0 +1,196 @@
+---
+title: "NYT"
+format: html
+editor: visual
+author: "Alicia Severiano Perez"
+---
+#Api for nyt
+##I am going to comment out like almost all of this only because it takes a lot from my computer and because I already obtained the data i needed, but can be uncommented to test out
+
+```{r}
+library(nytimes)
+library(jsonlite)
+library(dplyr)
+library(urltools)
+library(readr)
+```
+
+```{r}
+times_key <- "sMk7kLbWckmiYYVDOf0lMYD2jSAIWANV"
+
+url <- "http://api.nytimes.com/svc/search/v2/articlesearch.json"
+
+common_url <- param_set(url, "fq", url_encode("section_name:(\"U.S.\" \"Education\")"))
+common_url <- param_set(common_url, "q", url_encode("Minnesota teachers"))
+common_url <- param_set(common_url, "api-key", url_encode(times_key))
+
+
+teachers_conditions <- data.frame()
+
+```
+
+```{r}
+#for(i in 1:22){
+#  url <- param_set(common_url, "page", i)
+  # Make the API request
+#  Sys.sleep(12)  # Pause for 1 second
+#  res <- fromJSON(url)
+  # Extract the documents from the response
+#  docs <- res$response$docs
+  # Append the documents to the data frame
+#  teachers_conditions <- bind_rows(teachers_conditions, docs)
+#}
+```
+
+```{r}
+#View(teachers_conditions)
+```
+
+
+#flatten b/c there are dataframes/lists inside the data frame -> Hard to make it into a csv this way
+```{r}
+#teacher_conditions_flat <- flatten(teachers_conditions)
+```
+
+
+##I am going to comment out making a csv because i already have made this (This is alicia on 12th december), but i did use the following code
+```{r}
+#teacher_conditions_flat <- teacher_conditions_flat %>%
+ # select(-multimedia, -keywords, -byline.organization)
+
+#file_path <- as.character('/Users/aliciaseveriano/nyt_teacher_mn_data.csv')
+
+
+#write_csv(teacher_conditions_flat, file_path)
+```
+
+##Making it a csv :)
+```{r}
+nyt_data<- read_csv("/Users/aliciaseveriano/Documents/Sophmore\ Year/DS/Final\ Project/Code/nytData.csv")
+```
+
+
+
+##Students data
+```{r}
+# times_key <- "sMk7kLbWckmiYYVDOf0lMYD2jSAIWANV"
+# 
+# url <- "http://api.nytimes.com/svc/search/v2/articlesearch.json"
+# 
+# common_url <- param_set(url, "fq", url_encode("section_name:(\"U.S.\" \"Education\")"))
+# common_url <- param_set(common_url, "q", url_encode("Minnesota students"))
+# common_url <- param_set(common_url, "api-key", url_encode(times_key))
+# 
+# 
+# student_conditions <- data.frame()
+```
+
+```{r}
+# for(i in 1:22){
+#   url <- param_set(common_url, "page", i)
+#   # Make the API request
+#   Sys.sleep(12)  # Pause for 1 second
+#   res <- fromJSON(url)
+#   # Extract the documents from the response
+#   docs <- res$response$docs
+#   # Append the documents to the data frame
+#   student_conditions <- bind_rows(student_conditions, docs)
+# }
+```
+
+
+##I am going to comment out making a csv because i already have made this (This is alicia on 12th december), but i did use the following code
+
+```{r}
+
+#student_conditions_flat <- flatten(student_conditions)
+
+#student_conditions_flat <- student_conditions_flat %>%
+ # select(-multimedia, -keywords, -byline.organization)
+
+#file_path <- as.character('/Users/aliciaseveriano/nyt_student_mn_data.csv')
+
+
+#write_csv(student_conditions_flat, file_path)
+```
+
+
+##Testing out ways to obtain word counts -> i choose the words that i wanted to look for
+##I only tested teachers in here and then just changed the words for the function in the actuall r app
+
+```{r}
+library(dplyr)
+library(tidyr)
+nyt_data<- read_csv("/Users/aliciaseveriano/Documents/Sophmore\ Year/DS/Final\ Project/Code/nytData.csv")
+
+
+words_to_count <- c("union", "struggle", "tired", "money", "raise", "new", "poor", "lack", "happy", "joy", "fun", "want", "need")
+
+# Function to count occurrences of multiple words in a given string
+count_words <- function(text, words) {
+  sapply(words, function(word) sum(grepl(word, tolower(text))))
+}
+
+# Apply the function to each abstract in the 'abstract' column
+word_counts_summary <- nyt_data %>%
+  rowwise() %>%
+  mutate(word_counts = list(sapply(abstract, count_words, words = words_to_count))) %>%
+  unnest_wider(word_counts) %>%
+  summarise(across(where(is.numeric), sum)) %>%
+  pivot_longer(everything(), names_to = "word", values_to = "total_count") %>%
+  arrange(total_count) %>%
+  mutate(word = factor(word, levels = word))
+
+print(word_counts_summary)
+
+word_counts_summary <-word_counts_summary %>%
+filter(word != c("word_count") ) %>%
+filter(word != c("print_page") )
+```
+
+```{r}
+library(ggplot2)
+word_counts_summary %>%
+      ggplot(aes(y = word, x = total_count)) +
+      geom_bar(stat = "identity", fill = "mediumpurple4") +
+      labs(title = "Word Occurrences in NYT Articles related to Teaches in Minnesota ", y = "Words", x = "Total Count")+
+      theme_classic()+
+      theme(plot.title = element_text(face = "bold", vjust = 0.01, size=10),
+            axis.text.x=element_blank(),
+            axis.title=element_blank(),
+            axis.line.y = element_line(size = 0.0),
+            axis.line.x = element_line(size = 0.0),
+            axis.ticks.x=element_blank(),
+            panel.grid = element_blank(),
+            panel.background = element_blank(),
+            text = element_text(family = "Times New Roman")) 
+```
+##STUDENT
+```{r}
+library(dplyr)
+library(tidyr)
+nyt_student<- read_csv("/Users/aliciaseveriano/Documents/Sophmore\ Year/DS/Final\ Project/Code/nyt_student_mn_data.csv")
+
+student_words_to_count <- c("struggle", "tired", "poor", "lack", "shooting", "joy", "fun", "need")
+
+# Function to count occurrences of multiple words in a given string
+count_words <- function(text, words) {
+  sapply(words, function(word) sum(grepl(word, tolower(text))))
+}
+
+# Apply the function to each abstract in the 'abstract' column
+student_word_counts_summary <- nyt_student %>%
+  rowwise() %>%
+  mutate(word_counts = list(sapply(abstract, count_words, words = student_words_to_count))) %>%
+  unnest_wider(word_counts) %>%
+  summarise(across(where(is.numeric), sum)) %>%
+  pivot_longer(everything(), names_to = "word", values_to = "total_count") %>%
+  arrange( total_count)
+
+print(student_word_counts_summary)
+
+student_word_counts_summary <-student_word_counts_summary %>%
+filter(word != c("word_count") ) %>%
+filter(word != c("print_page") )
+```
+
